@@ -1,0 +1,19 @@
+name: Docker Image CI
+on: [push]
+jobs:
+  build:
+    runs-on:  rockylinux-9
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        lfs: true
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build & Push
+      run: |
+        docker build . --file Dockerfile --tag pulse-client-container:latest
+        docker push ghcr.io/tony-robson/pulse-client-container:latest
+
+
