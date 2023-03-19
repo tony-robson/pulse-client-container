@@ -15,7 +15,7 @@ podman run -d \
  --security-opt="label=disable" \
  --env=DISPLAY=host.containers.internal:0 \
  -p 8023:22 \
- --dns=10.88.0.1 \
+ --dns=10.88.0.1 \ #replace with your podman host IP
  ghcr.io/tony-robson/pulse-client-container
 ~~~
 
