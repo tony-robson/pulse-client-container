@@ -9,13 +9,14 @@ Start the container in podman
 podman run -d \
  --name pulse-client \
  --volume=/tmp/.X11-unix:/tmp/.X11-unix \
- --cap-add=net_admin \
+ --volume=/path/to/pulse/data:/var/lib/pulsesecure/pulse \
+ --cap-add=NET_ADMIN \
  --device=/dev/net/tun \
  --security-opt="label=disable" \
  --env=DISPLAY=host.containers.internal:0 \
- -p 8022:22 \
+ -p 8023:22 \
  --dns=10.88.0.1 \
- localhost/pulse-client
+ ghcr.io/tony-robson/pulse-client-container
 ~~~
 
 
