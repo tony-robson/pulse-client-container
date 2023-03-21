@@ -17,8 +17,8 @@ podman run -d \
  --security-opt="label=disable" \ #Required to allow access to /dev/net/tun
  --env=DISPLAY=host.containers.internal:0 \
  -p 8023:22 \
- --dns=10.88.0.1 \ #replace with your podman host IP
- ghcr.io/tony-robson/pulse-client-container
+ --dns=none \ #Stops podman messing with resolv.con which pulse needs to change to reslove hosts on the other end of the tunnel
+ ghcr.io/tony-robson/pulse-client-container:latest
 ~~~
 
 
