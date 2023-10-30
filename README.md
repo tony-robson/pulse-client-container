@@ -1,7 +1,7 @@
 # pulse-client-container
 [![build](https://github.com/tony-robson/pulse-client-container/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/tony-robson/pulse-client-container/actions/workflows/docker-publish.yml)
 
-Rootless Podman container for running Pulse Secure VPN Client accesible as an SSH jumphost.
+Podman container for running Pulse Secure VPN Client accesible as an SSH jumphost.
 
 ## Usage
 
